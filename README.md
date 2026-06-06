@@ -1,14 +1,14 @@
 # PM Chat React
 
-Reusable React chat components and hooks for ProjectMaker templates.
+Reusable React chat components and hooks.
 
 This package is intentionally backend-agnostic. It expects a paginated message
-API and an optional WebSocket endpoint, but it does not depend on ProjectMaker's
-agent, backlog, execution, or billing models.
+API and an optional WebSocket endpoint, but it does not depend on any product
+domain or application-specific model.
 
 ## Install
 
-Use it from generated templates as a local package:
+Use it as a local package:
 
 ```json
 {
@@ -28,7 +28,7 @@ export function SupportChat() {
     <ChatWindow
       conversationId="support-room"
       currentUserId="user-1"
-      apiBaseUrl="/api/v1/chat"
+      apiBaseUrl="/chat-api"
       websocketUrl="wss://example.com/ws/chat/support-room/"
     />
   );
@@ -44,7 +44,7 @@ Returns either an array of messages or a paginated response:
 ```json
 {
   "results": [],
-  "next": "/api/v1/chat/conversations/support-room/messages/?page=2"
+  "next": "/chat-api/conversations/support-room/messages/?page=2"
 }
 ```
 

@@ -9,6 +9,8 @@ interface MessageListProps {
   onLoadOlder?: () => void;
   renderMessage?: (message: ChatMessage) => ReactNode;
   className?: string;
+  loadOlderLabel?: string;
+  loadingOlderLabel?: string;
 }
 
 export function MessageList({
@@ -18,12 +20,14 @@ export function MessageList({
   onLoadOlder,
   renderMessage,
   className = '',
+  loadOlderLabel = 'Load older messages',
+  loadingOlderLabel = 'Loading...',
 }: MessageListProps) {
   return (
     <div className={`pm-chat-list ${className}`.trim()}>
       {hasOlder && (
         <button type="button" className="pm-chat-list__load-older" disabled={loadingOlder} onClick={onLoadOlder}>
-          {loadingOlder ? 'Loading...' : 'Load older messages'}
+          {loadingOlder ? loadingOlderLabel : loadOlderLabel}
         </button>
       )}
       {messages.map((message) => (

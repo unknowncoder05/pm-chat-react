@@ -15,6 +15,9 @@ export function ChatWindow({
   messageListClassName = '',
   inputClassName = '',
   placeholder,
+  sendLabel,
+  loadOlderLabel,
+  loadingOlderLabel,
   renderMessage,
   onError,
 }: ChatWindowProps) {
@@ -46,10 +49,13 @@ export function ChatWindow({
         onLoadOlder={chat.loadOlder}
         renderMessage={renderMessage}
         className={messageListClassName}
+        loadOlderLabel={loadOlderLabel}
+        loadingOlderLabel={loadingOlderLabel}
       />
       <MessageInput
         onSend={handleSend}
         placeholder={placeholder}
+        sendLabel={sendLabel}
         disabled={chat.loading}
         className={inputClassName}
       />

@@ -3,11 +3,18 @@ import { FormEvent, useState } from 'react';
 interface MessageInputProps {
   onSend: (content: string) => Promise<void> | void;
   placeholder?: string;
+  sendLabel?: string;
   disabled?: boolean;
   className?: string;
 }
 
-export function MessageInput({ onSend, placeholder = 'Type a message...', disabled = false, className = '' }: MessageInputProps) {
+export function MessageInput({
+  onSend,
+  placeholder = 'Type a message...',
+  sendLabel = 'Send',
+  disabled = false,
+  className = '',
+}: MessageInputProps) {
   const [value, setValue] = useState('');
   const [sending, setSending] = useState(false);
 
@@ -34,7 +41,7 @@ export function MessageInput({ onSend, placeholder = 'Type a message...', disabl
         className="pm-chat-input__field"
       />
       <button type="submit" disabled={disabled || sending || !value.trim()} className="pm-chat-input__send">
-        Send
+        {sendLabel}
       </button>
     </form>
   );

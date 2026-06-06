@@ -40,6 +40,9 @@ export interface ChatWindowProps {
   messageListClassName?: string;
   inputClassName?: string;
   placeholder?: string;
+  sendLabel?: string;
+  loadOlderLabel?: string;
+  loadingOlderLabel?: string;
   renderMessage?: (message: ChatMessage) => ReactNode;
   onError?: (error: unknown) => void;
 }

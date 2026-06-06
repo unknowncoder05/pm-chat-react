@@ -1,7 +1,7 @@
 {
   "name": "@projectmaker/pm-chat-react",
   "version": "0.1.0",
-  "description": "ProjectMaker reusable React chat components and hooks",
+  "description": "Reusable React chat components and hooks",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
